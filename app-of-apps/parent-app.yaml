@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-of-apps-jjp-test
+  name: app-of-apps-jjp-test-parent
   namespace: argocd-comsafe
 spec:
   project: default
   source:
     repoURL: https://github.com/jponte85/argocd-example-apps
     targetRevision: main
-    path: apps
+    path: apps/child-app-1
   destination:
     name: in-cluster
     namespace: argocd-comsafe
