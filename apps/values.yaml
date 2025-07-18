@@ -3,7 +3,7 @@ config:
     destination:
       server: https://95DC6075B53B25EFD86C04CFC30203E6.sk1.eu-central-1.eks.amazonaws.com 
     source:
-      repoURL: https://github.com/argoproj/argocd-example-apps
+      repoURL: https://github.com/jponte85/argocd-example-apps
       targetRevision: master
 
 applications:
