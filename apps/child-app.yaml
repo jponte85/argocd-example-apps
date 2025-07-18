@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: child-app-1
+  namespace: argocd-comsafe  # Namespace in the management cluster
+spec:
+  destination:
+    server: https://95DC6075B53B25EFD86C04CFC30203E6.sk1.eu-central-1.eks.amazonaws.com # External cluster API
+    namespace: default  # Target namespace in external cluster
+  project: default
+  source:
+    repoURL: https://github.com/jponte85/argocd-example-apps
+    targetRevision: HEAD
+    path: apps/child-app-1  # Path to the app in the repo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
